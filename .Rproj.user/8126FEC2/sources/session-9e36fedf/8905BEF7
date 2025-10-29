@@ -1,14 +1,14 @@
 {
-    "id": "B1EA00AE",
-    "path": "~/Desktop/assignment4/vignettes/test_run.Rmd",
-    "project_path": "vignettes/test_run.Rmd",
-    "type": "r_markdown",
-    "hash": "1542601862",
+    "id": "8905BEF7",
+    "path": "~/Desktop/assignment4/DESCRIPTION",
+    "project_path": "DESCRIPTION",
+    "type": "dcf",
+    "hash": "0",
     "contents": "",
-    "dirty": false,
-    "created": 1761710712759.0,
+    "dirty": true,
+    "created": 1761719067126.0,
     "source_on_save": false,
-    "relative_order": 2,
+    "relative_order": 3,
     "properties": {
         "source_window_id": "",
         "Source": "Source",
@@ -16,11 +16,11 @@
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1761710720,
+    "lastKnownWriteTime": 1761718898,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1761710720493,
+    "last_content_update": 1761719679612,
     "read_only": false,
     "read_only_alternatives": []
 }

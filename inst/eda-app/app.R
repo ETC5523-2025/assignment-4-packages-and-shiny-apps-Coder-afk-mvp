@@ -1,0 +1,129 @@
+# --- Libraries ---
+library(shiny)
+library(ggplot2)
+library(dplyr)
+library(ggthemes)
+library(plotly)
+library(DT)
+library(bslib)
+
+# --- Load dataset from your package (stored via data/ folder) ---
+data("common_names", package = "Assignment4")
+
+# Reorder for clean plotting
+common_names <- common_names |>
+  mutate(name = reorder(name, per_1000))
+
+# --- UI ---
+ui <- fluidPage(
+  headerPanel("Most Common First Names Per 1,000 Americans as of 2013"),
+
+  theme = bs_theme(
+    version = 5,
+    bootswatch = "sketchy",
+    primary = "black"
+  ),
+
+
+  tabsetPanel(
+    tabPanel("Interactive Plot",
+             sidebarLayout(
+               sidebarPanel(
+                 textInput("name_filter", "Search by Name:", ""),
+                 selectInput("gender", "Select Gender:",
+                             choices = c("All", "Male", "Female"),
+                             selected = "All"),
+                 selectInput("sort_order", "Sort by:",
+                             choices = c("Descending" = "desc", "Ascending" = "asc"),
+                             selected = "desc"),
+                 sliderInput("top_n", "Number of Names to Display:",
+                             min = 0, max = 100, value = 20, step = 5),
+                 selectizeInput("highlight_name", "Highlight a Name:",
+                                choices = c("", sort(unique(common_names$name))),
+                                selected = NULL,
+                                multiple = FALSE)
+               ),
+               mainPanel(
+                 plotlyOutput("name_plot"),
+                 tags$hr(),
+                 tags$h4("Understanding the plot:"),
+                 tags$p("Source: https://fivethirtyeight.com/features/whats-the-most-common-name-in-america/"),
+                 tags$p(
+                   "Each bar represents how common a name is per 1000 Americans in 2013.",
+                   "Longer bars indicate more frequent names.",
+                   "You can use the gender filter or search bar to narrow down results.",
+                   "The highlight feature emphasizes one selected name for comparison,",
+                   "and the slider lets you adjust how many top names are displayed."
+                 )
+               )
+             )
+    ),
+
+    tabPanel("View Data",
+             fluidRow(
+               column(12,
+                      h4("Raw Dataset"),
+                      helpText(
+                        strong("Descriptions:"),
+                        "name – First name of the individual.",
+                        "gender – Gender associated with the name.",
+                        "per_1000 – Number of people per 1,000 Americans who have the common name as of 2013."
+                      ),
+                      DTOutput("data_table")
+               )
+             )
+    )
+  )
+)
+
+# --- SERVER ---
+server <- function(input, output) {
+
+  # --- Reactive filtered dataset ---
+  filtered_data <- reactive({
+    df <- common_names |>
+      filter(
+        if (input$gender == "All") TRUE else gender == input$gender,
+        if (input$name_filter == "") TRUE else grepl(input$name_filter, name, ignore.case = TRUE)
+      ) |>
+      mutate(name = if (input$sort_order == "desc")
+        reorder(name, per_1000)
+        else reorder(name, -per_1000)) |>
+      arrange(per_1000)
+
+    df |>
+      slice_max(order_by = per_1000, n = input$top_n)
+  })
+
+  # --- Plot ---
+  output$name_plot <- renderPlotly({
+    df <- filtered_data()
+
+    p <- ggplot(df, aes(x = name, y = per_1000, fill = gender)) +
+      geom_bar(
+        stat = "identity",
+        aes(text = paste0(name, ": ", per_1000),
+            alpha = ifelse(name == input$highlight_name, 1, 0.6))
+      ) +
+      coord_flip() +
+      scale_alpha_identity() +
+      scale_fill_manual(values = c("Male" = "purple", "Female" = "black")) +
+      labs(x = NULL, y = "Per 1,000 Americans", fill = NULL) +
+      theme_fivethirtyeight() +
+      theme(axis.text.y = element_text(size = 11, color = "black"),
+            legend.position = "none")
+
+    ggplotly(p, tooltip = "text") |>
+      config(
+        modeBarButtonsToRemove = c("pan2d", "lasso2d", "autoScale2d", "zoom2d", "resetScale2d", "select2d")
+      )
+  })
+
+  # --- Data Table ---
+  output$data_table <- renderDT({
+    datatable(common_names, options = list(pageLength = 10), rownames = FALSE)
+  })
+}
+
+# --- RUN APP ---
+shinyApp(ui = ui, server = server)

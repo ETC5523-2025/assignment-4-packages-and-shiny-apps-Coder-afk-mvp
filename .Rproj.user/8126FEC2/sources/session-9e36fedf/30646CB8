@@ -1,0 +1,26 @@
+{
+    "id": "30646CB8",
+    "path": "~/Desktop/assignment4/inst/eda-app/app.R",
+    "project_path": "inst/eda-app/app.R",
+    "type": "r_source",
+    "hash": "3920958624",
+    "contents": "",
+    "dirty": false,
+    "created": 1761719184615.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "129,0",
+        "scrollLine": "106"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1761719610,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1761719610276,
+    "read_only": false,
+    "read_only_alternatives": []
+}

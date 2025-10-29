@@ -1,0 +1,33 @@
+---
+title: "Getting_Started_NamesR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting_Started_NamesR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, message=FALSE}
+library(NamesR)
+library(dplyr)
+library(ggplot2)
+```
+
+About the Package
+
+NamesR is a simple R package that provides:
+
+- A data-set withthe most common first names in the U.S.(2013).
+- It demonstrates how datasets and Shiny applications can be bundled together in an R package.
+- An interactive Shiny app for visual exploration of these names and data is sourced from,
+
+https://fivethirtyeight.com/features/whats-the-most-common-name-in-america/
+
+

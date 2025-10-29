@@ -8,7 +8,7 @@ library(DT)
 library(bslib)
 
 # --- Load dataset from your package (stored via data/ folder) ---
-data("common_names", package = "Assignment4")
+data("common_names", package = "NamesR")
 
 # Reorder for clean plotting
 common_names <- common_names |>

@@ -22,7 +22,7 @@ pak::pak("ETC5523-2025/assignment-4-packages-and-shiny-apps-Coder-afk-mvp")
 ## Documentation
 
 For detailed documentation and examples, visit the pkgdown site:  
-
+[https://etc5523-2025.github.io/assignment-4-packages-and-shiny-apps-Coder-afk-mvp/](https://etc5523-2025.github.io/assignment-4-packages-and-shiny-apps-Coder-afk-mvp/)
 
 ## Example
 

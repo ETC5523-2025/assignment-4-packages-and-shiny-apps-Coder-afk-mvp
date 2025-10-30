@@ -30,9 +30,3 @@ NamesR is a simple R package that provides:
 
 https://fivethirtyeight.com/features/whats-the-most-common-name-in-america/
 
-## Launch the App
-```r
-
-library(NamesR)
-
-run_app()

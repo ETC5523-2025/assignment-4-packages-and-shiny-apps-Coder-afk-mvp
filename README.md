@@ -19,6 +19,11 @@ You can install the development version of NamesR from [GitHub](https://github.c
 pak::pak("ETC5523-2025/assignment-4-packages-and-shiny-apps-Coder-afk-mvp")
 ```
 
+## Documentation
+
+For detailed documentation and examples, visit the pkgdown site:  
+
+
 ## Example
 
 This is a basic example which shows you how to solve a common problem:

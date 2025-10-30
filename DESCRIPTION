@@ -1,19 +1,29 @@
 Package: NamesR
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Common First Names in the US
 Version: 0.1.0
 Authors@R: c(
     person(
-      "Jane", "Doe",
-      email = "jane@example.com",
+      "Prem", "MV",
+      email = "pmal0022@student.monash.edu",
       role = c("aut", "cre")
     )
   )
-Description: More about what it does (maybe more than one line).
-    Continuation lines should be indented.
+Description: The NamesR package includes a Shiny app and dataset
+    that visualises the most common first names in the United States.
+    It demonstrates how to structure an R package, document functions
+    using roxygen2, and present interactive analysis with Shiny.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Imports:
+    shiny,
+    ggplot2,
+    dplyr,
+    ggthemes,
+    plotly,
+    DT,
+    bslib
 Suggests: 
     knitr,
     rmarkdown

@@ -1,5 +1,7 @@
 ---
 title: "Getting_Started_NamesR"
+author: "Prem MV"
+date: "05.11.2025"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Getting_Started_NamesR}
@@ -26,7 +28,5 @@ NamesR is a simple R package that provides:
 
 - A data-set withthe most common first names in the U.S.(2013).
 - It demonstrates how datasets and Shiny applications can be bundled together in an R package.
-- An interactive Shiny app for visual exploration of these names and data is sourced from,
-
-https://fivethirtyeight.com/features/whats-the-most-common-name-in-america/
+- An interactive Shiny app for visual exploration of these names and data is sourced from [here](https://fivethirtyeight.com/features/whats-the-most-common-name-in-america/)
 

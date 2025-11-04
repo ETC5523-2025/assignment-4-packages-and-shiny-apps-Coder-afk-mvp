@@ -14,6 +14,8 @@ Description: The NamesR package includes a Shiny app and dataset
     It demonstrates how to structure an R package, document functions
     using roxygen2, and present interactive analysis with Shiny.
 License: MIT + file LICENSE
+URL: https://github.com/ETC5523-2025/assignment-4-packages-and-shiny-apps-Coder-afk-mvp
+BugReports: https://github.com/ETC5523-2025/assignment-4-packages-and-shiny-apps-Coder-afk-mvp/issues
 Encoding: UTF-8
 LazyData: true
 Imports:

@@ -1,0 +1,29 @@
+template:
+  params:
+    bootswatch: flatly
+    bslib:
+      primary: "#1B4F72"
+      secondary: "#AED6F1"
+      base_font: {system: "Segoe UI"}
+      heading_font: {system: "Verdana"}
+      code_font: {system: "Consolas"}
+
+  assets:
+    css: pkgdown/extra.css
+
+
+reference:
+  - title: "Data"
+    desc: >
+      Datasets included in the **NamesR** package.
+    contents:
+      - common_names
+
+  - title: "Core Functions"
+    desc: >
+      The main functions that power the package and its interactive Shiny app.
+    contents:
+      - run_app
+      - hello
+
+

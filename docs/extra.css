@@ -1,0 +1,88 @@
+body {
+  background-color: #fafafa;
+  color: #222;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+.navbar {
+  background: linear-gradient(90deg, #1B4F72, #154360);
+  border-bottom: 3px solid #0E334E;
+}
+.navbar-brand {
+  font-weight: 600;
+  color: #fff !important;
+  font-size: 1.3rem;
+}
+.navbar-nav > li > a {
+  color: #eaeaea !important;
+  font-weight: 500;
+}
+.navbar-nav > li > a:hover {
+  color: #F7DC6F !important;
+}
+
+
+h1, h2, h3 {
+  font-family: "Poppins", "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  color: #1B4F72;
+}
+h1 {
+  border-bottom: 3px solid #AED6F1;
+  padding-bottom: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+pre, code {
+  background-color: #f4f8fb !important;
+  color: #1A5276 !important;
+  border-left: 4px solid #1B4F72;
+  border-radius: 6px;
+  font-family: "Fira Code", monospace;
+  padding: 0.5rem 1rem;
+}
+
+a {
+  color: #1B4F72;
+  text-decoration: none;
+}
+a:hover {
+  color: #117864;
+  text-decoration: underline;
+}
+
+div.sidebar {
+  background-color: #ffffff;
+  border-left: 4px solid #1B4F72;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+div.sidebar h2 {
+  font-size: 1.1rem;
+  color: #1B4F72;
+}
+
+pre code {
+  display: block;
+  background: #eef5fa;
+  color: #1B2631;
+  border-left: 5px solid #1B4F72;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.footer {
+  background-color: #1B4F72;
+  color: #fff;
+  padding: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+section {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
